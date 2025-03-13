@@ -1,3 +1,4 @@
+import { guessNumberInit } from '../games/guess-number';
 export default [
   {
     id: 1,
@@ -10,6 +11,7 @@ export default [
     name: 'Вгадай число',
     category: 'numerical',
     class: 'guess-number',
+    init: guessNumberInit,
   },
   {
     id: 3,

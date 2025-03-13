@@ -18,10 +18,10 @@ const renderGames = (games, category) => {
     .map(
       game =>
         `<section class='section' id='${game.class}'>
-    <div class="container ${game.class}__container game__container">
-      <div class="game ${game.class}"></div>
-    </div>
-  </section>`
+           <div class="container">
+            <div class="game ${game.class}"></div>
+           </div>
+          </section>`
     )
     .join('');
 

@@ -1,0 +1,19 @@
+.guess-number__container {
+  max-width: 575px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+.guess-number__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.guess-number__form {
+  display: flex;
+}
+.guess-number__input {
+}
