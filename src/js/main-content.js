@@ -37,24 +37,26 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const filterHandler = event => {
-  const category = event.target.dataset.category;
+  if (event.target.tagName === 'BUTTON') {
+    const category = event.target.dataset.category;
 
-  switch (category) {
-    case 'numerical':
-      renderGames(games, 'numerical');
+    switch (category) {
+      case 'numerical':
+        renderGames(games, 'numerical');
 
-      break;
-    case 'games':
-      renderGames(games, 'game');
+        break;
+      case 'games':
+        renderGames(games, 'game');
 
-      break;
-    case 'acquaintance':
-      renderGames(games, 'acquaintance');
+        break;
+      case 'acquaintance':
+        renderGames(games, 'acquaintance');
 
-      break;
+        break;
 
-    default:
-      renderGames(games);
+      default:
+        renderGames(games);
+    }
   }
 };
 
