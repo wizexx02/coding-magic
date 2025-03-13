@@ -11,9 +11,69 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
 .guess-number__form {
   display: flex;
 }
 .guess-number__input {
+  min-width: 115px;
+  background-color: #d7d7d7; //замінити на змінну
+  border-radius: 20px 0 0 20px;
+  padding: 10px;
+  color: #7e7e7e; //замінити на змінну
+  font-size: 12px;
+  box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.25);
+}
+.guess-number__button {
+  background-color: #000000; //замінити на змінну
+  color: #ffffff; //замінити на змінну
+  padding: 10px;
+  border-radius: 0 20px 20px 0;
+  box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.25);
+}
+.guess-number__message {
+  font-size: 12px;
+  color: #039900; //замінити на змінну
+  animation: showMessage 0.75s ease;
+}
+.guess-number__message--error {
+  color: #990000; //замінити на змінну
+}
+.guess-number__restart {
+  background-color: #000000; //замінити на змінну
+  color: #ffffff; //замінити на змінну
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+}
+.guess-number__restart--show {
+  opacity: 1;
+  pointer-events: all;
+  animation: showRestart 0.75s ease;
+}
+
+@keyframes showRestart {
+  0% {
+    scale: 0.5;
+  }
+  80% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes showMessage {
+  0% {
+    translate: 200% 0;
+    opacity: 0;
+  }
+  100% {
+    translate: 0 0;
+    opacity: 1;
+  }
 }

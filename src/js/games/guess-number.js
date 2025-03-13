@@ -7,11 +7,11 @@ export const guessNumberInit = () => {
     <h2 class="game__title">Вгадай число, яке загадав комп’ютер</h2>
     <div class="guess-number__wrapper">
         <form class="guess-number__form" data-guess_number_form>
-          <input class="guess-number__input" type="number" max="10" min="0" required name="guessNumber"/>
+          <input class="guess-number__input" type="number" max="10" min="0" required name="guessNumber" placeholder="Введіть число"/>
           <button class="guess-number__button" name="guessNumberButton">S</button>
         </form>
     </div>
-    <button class="guess-number__restart" style="display: none;">Перезапустити гру</button>
+    <button class="guess-number__restart";">Перезапустити гру</button>
     </div>`;
 
   gameContainer.innerHTML = gameHtml;
@@ -36,7 +36,7 @@ export const guessNumberInit = () => {
         `<p class="guess-number__message guess-number__message--error">Ви програли, комп’ютер загадав  (${RIDDLE_NUMBER})</p>`
       );
     }
-    restartButton.style.display = 'block';
+    restartButton.classList.add('guess-number__restart--show');
     form.guessNumber.disabled = true;
     form.guessNumberButton.disabled = true;
   };
