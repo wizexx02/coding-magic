@@ -1,0 +1,44 @@
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.subscribe-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.subscribe-form__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.subscribe-form__input {
+  background-color: #d7d7d7; //замінити на змінну
+  border-radius: 20px;
+  padding: 10px;
+  color: #7e7e7e; //замінити на змінну
+}
+.subscribe-form__button {
+  background-color: #000000; //замінити на змінну
+  color: #ffffff; //замінити на змінну
+  padding: 10px;
+  border-radius: 20px;
+}
+.form-info {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 6px;
+}
+@media (min-width: 1200px) {
+  .subscribe-form {
+    flex-direction: row;
+    gap: 35px;
+  }
+}
