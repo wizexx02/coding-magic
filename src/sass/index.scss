@@ -1,5 +1,5 @@
+@import './utils/variables';
 @import './global/common';
-@import './reset.scss';
-@import './global.scss';
-@import '../components/header.scss';
-@import '../utils/variables.scss';
+@import './global/reset';
+@import './global/global';
+@import './components/header';
