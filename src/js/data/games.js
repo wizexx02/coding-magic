@@ -1,4 +1,5 @@
 import { guessNumberInit } from '../games/guess-number';
+import { calculatorInit } from '../games/calculator';
 export default [
   {
     id: 1,
@@ -24,6 +25,7 @@ export default [
     name: 'Калькулятор',
     category: 'numerical',
     class: 'calculator',
+    init: calculatorInit,
   },
   {
     id: 5,
