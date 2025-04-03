@@ -1,3 +1,4 @@
+import { rockPaperScissorsInit } from '../games/rock-paper-scissors';
 import { guessNumberInit } from '../games/guess-number';
 import { calculatorInit } from '../games/calculator';
 export default [
