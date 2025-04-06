@@ -20,6 +20,7 @@ export default [
     name: 'Камінь-Ножиці-Папір',
     category: 'game',
     class: 'rock-paper-scissors',
+    init: rockPaperScissorsInit,
   },
   {
     id: 4,

@@ -1,4 +1,6 @@
-const gameHtml = `
+export const rockPaperScissorsInit = () => {
+  const gameContainer = document.querySelector('.rock-paper-scissors');
+  const gameHtml = `
   <div class="rock-paper-scissors__container">
     <h1 class="game__title">Гра "Камінь, ножиці, папір"</h1>
     <div class="choices">
@@ -11,48 +13,47 @@ const gameHtml = `
   </div>
 `;
 
-gameContainer.innerHTML = gameHtml; // Вставляем HTML код в body
+  gameContainer.innerHTML = gameHtml; // Вставляем HTML код в body
 
-let playerScore = 0;
-let computerScore = 0;
-let drawScore = 0;
+  let playerScore = 0;
+  let computerScore = 0;
+  let drawScore = 0;
 
-document.addEventListener('DOMContentLoaded', function () {
   document
     .getElementById('rock')
     .addEventListener('click', () => playGame('Камінь'));
-  document
-    .getElementById('scissors')
-    .addEventListener('click', () => playGame('Ножиці'));
+  document.getElementById('scissors').addEventListener('click', () => {
+    playGame('Ножиці');
+    console.log('work');
+  });
   document
     .getElementById('paper')
     .addEventListener('click', () => playGame('Папір'));
-});
+  function playGame(playerChoice) {
+    const choices = ['Камінь', 'Ножиці', 'Папір'];
+    const computerChoice = choices[Math.floor(Math.random() * 3)];
+    let result = '';
 
-function playGame(playerChoice) {
-  const choices = ['Камінь', 'Ножиці', 'Папір'];
-  const computerChoice = choices[Math.floor(Math.random() * 3)];
-  let result = '';
+    if (playerChoice === computerChoice) {
+      result = 'Нічия!';
+      drawScore++;
+    } else if (
+      (playerChoice === 'Камінь' && computerChoice === 'Ножиці') ||
+      (playerChoice === 'Ножиці' && computerChoice === 'Папір') ||
+      (playerChoice === 'Папір' && computerChoice === 'Камінь')
+    ) {
+      result = 'Ви перемогли!';
+      playerScore++;
+    } else {
+      result = "Комп'ютер переміг!";
+      computerScore++;
+    }
 
-  if (playerChoice === computerChoice) {
-    result = 'Нічия!';
-    drawScore++;
-  } else if (
-    (playerChoice === 'Камінь' && computerChoice === 'Ножиці') ||
-    (playerChoice === 'Ножиці' && computerChoice === 'Папір') ||
-    (playerChoice === 'Папір' && computerChoice === 'Камінь')
-  ) {
-    result = 'Ви перемогли!';
-    playerScore++;
-  } else {
-    result = "Комп'ютер переміг!";
-    computerScore++;
+    document.getElementById(
+      'result'
+    ).innerHTML = `Ви вибрали: ${playerChoice} <br> Комп'ютер вибрав: ${computerChoice} <br> <strong>${result}</strong>`;
+    document.getElementById(
+      'score'
+    ).innerText = `Рахунок: Гравець ${playerScore} - ${computerScore} Комп'ютер - ${drawScore} Нічиї`;
   }
-
-  document.getElementById(
-    'result'
-  ).innerHTML = `Ви вибрали: ${playerChoice} <br> Комп'ютер вибрав: ${computerChoice} <br> <strong>${result}</strong>`;
-  document.getElementById(
-    'score'
-  ).innerText = `Рахунок: Гравець ${playerScore} - ${computerScore} Комп'ютер - ${drawScore} Нічиї`;
-}
+};
