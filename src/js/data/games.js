@@ -1,5 +1,6 @@
 import { guessNumberInit } from '../games/guess-number';
 import { calculatorInit } from '../games/calculator';
+import { scientistInit } from '../games/scientist';
 export default [
   {
     id: 1,
@@ -62,5 +63,6 @@ export default [
     name: 'Вчений',
     category: 'acquaintance',
     class: 'scientist',
+    init: scientistInit,
   },
 ];
