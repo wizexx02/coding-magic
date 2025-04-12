@@ -100,7 +100,7 @@ export default [
   },
   {
     name: 'Hanna',
-    surname: 'Hammarström',
+    surname: 'Hammarstrom',
     born: 1829,
     dead: 1909,
     id: 12,

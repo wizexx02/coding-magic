@@ -61,8 +61,9 @@ export const scientistInit = () => {
   const renderScientist = array => {
     scientistList.innerHTML = array
       .map(
-        scientist => `<li class="scientist__item">  
-            <article class="scientist-card" style="background-image: url(${scientist.photo})">
+        scientist => `<li class="scientists__item">  
+            <article class="scientist-card">
+                <div class="scientist-card__bg" style="background-image: url(${scientist.photo})"></div>
                 <div class="scientist-card__meta">
                     <p class="scientist-card__name">${scientist.name} ${scientist.surname}</p>
                     <p class="scientist-card__date">${scientist.born}-${scientist.dead}</p>
