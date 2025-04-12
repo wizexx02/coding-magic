@@ -13,3 +13,9 @@ burgerBtn.addEventListener('click', () => {
   }
   isOpen = !isOpen;
 });
+
+filterMenu.addEventListener('click', () => {
+  filterMenu.style.opacity = '0';
+  filterMenu.style.pointerEvents = 'none';
+  isOpen = false;
+});
