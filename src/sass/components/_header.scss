@@ -1,11 +1,10 @@
 .header {
-  width: 100%;
-  height: 80px;
+  padding: 21px 0;
+}
+.header__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 361px;
-  padding: 0 175px;
 }
 .header__text {
   display: flex;
@@ -51,23 +50,30 @@
 .header__list-button {
   background: none;
 }
-@media (max-width: 767px) {
-  .header {
-    max-width: 100%;
-    padding: 0 25px;
-    gap: 0;
+@media (max-width: 468px) {
+  .header__link {
+    overflow: hidden;
+    width: 40px;
   }
-  .header__list {
+}
+@media (max-width: 767px) {
+  #header__list-team {
     display: none;
   }
   .header__lowertext {
     gap: 20px;
   }
+  .header__user {
+    display: none;
+  }
+  .header__text {
+    gap: 20px;
+  }
 }
 @media (min-width: 767px) and (max-width: 1023px) {
   .header {
-    gap: 0;
-    padding: 0 40px;
+    // gap: 0;
+    // padding: 0 40px;
   }
   .header__lowertext {
     gap: 20px;
