@@ -1,4 +1,6 @@
 import { guessNumberInit } from '../games/guess-number';
+import { googleDinoInit } from '../games/google-dino';
+import { timeCalculatorInit } from '../games/time-calculate';
 import { calculatorInit } from '../games/calculator';
 export default [
   {
@@ -32,12 +34,14 @@ export default [
     name: 'Калькулятор часу',
     category: 'numerical',
     class: 'time-calculator',
+    init: timeCalculatorInit,
   },
   {
     id: 6,
     name: 'Google динозаврик',
     category: 'game',
     class: 'google-dinosaur',
+    init: googleDinoInit,
   },
   {
     id: 7,
