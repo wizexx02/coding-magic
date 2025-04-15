@@ -2,14 +2,14 @@ export const rockPaperScissorsInit = () => {
   const gameContainer = document.querySelector('.rock-paper-scissors');
   const gameHtml = `
   <div class="rock-paper-scissors__container">
-    <h1 class="game__title">Гра "Камінь, ножиці, папір"</h1>
-    <div class="choices">
-        <button class="choice-button" id="rock">Камінь</button>
-        <button class="choice-button" id="scissors">Ножиці</button>
-        <button class="choice-button" id="paper">Папір</button>
+    <h1 class="rock__title">Камінь - ножиці - папір</h1>
+    <div class="rock__wrapper">
+        <button class="rock__wrapper-button" id="rock"><img src="../../images/rock.png" alt="stone"></button>
+        <button class="rock__wrapper-button" id="scissors"><img src="../../images/scissors.png" alt="scissors"></button>
+        <button class="rock__wrapper-button" id="paper"><img src="../../images/paper.png" alt="paper"></button>
     </div>
-    <div class="result" id="result"></div>
-    <div class="score" id="score">Рахунок: Гравець 0 - 0 Комп'ютер - 0 Нічиї</div>
+    <div class="rock__result" id="result"></div>
+    <div class="rock__score" id="score">Рахунок: Гравець 0 - 0 Комп'ютер - 0 Нічиї</div>
   </div>
 `;
 
