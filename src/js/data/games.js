@@ -1,5 +1,6 @@
 import { guessNumberInit } from '../games/guess-number';
 import { calculatorInit } from '../games/calculator';
+import { maxNumberGameInit } from '../games/treenumbers';
 export default [
   {
     id: 1,
@@ -50,6 +51,7 @@ export default [
     name: 'Найбільше число',
     category: 'numerical',
     class: 'biggest-number',
+    init: maxNumberGameInit,
   },
   {
     id: 9,
