@@ -2,6 +2,7 @@ import { guessNumberInit } from '../games/guess-number';
 import { googleDinoInit } from '../games/google-dino';
 import { timeCalculatorInit } from '../games/time-calculate';
 import { calculatorInit } from '../games/calculator';
+import { footballGameInit } from '../games/football';
 import { scientistInit } from '../games/scientist';
 export default [
   {
@@ -49,6 +50,7 @@ export default [
     name: 'Футбол',
     category: 'game',
     class: 'soccer',
+    init: footballGameInit,
   },
   {
     id: 8,
