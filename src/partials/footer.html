@@ -38,7 +38,7 @@
     </ul>
 
     <div class="form-wrapper">
-      <form class="subscribe-form">
+      <form class="subscribe-form" id="subscribe-form">
         <div class="subscribe-form__field">
           <label class="subscribe-form__label" for="user-email">Email</label>
 
@@ -47,6 +47,7 @@
             class="subscribe-form__input"
             type="email"
             placeholder="Ваша ел. адреса..."
+            required
           />
         </div>
         <button class="subscribe-form__button" type="submit">
@@ -57,5 +58,9 @@
         *Підписавшись, Ви зможете ортимувати інформаццію про новинки на сайті
       </p>
     </div>
+    <dialog id="subscribe-popup" class="subscribe-popup">
+      <button class="subscribe-popup__close"></button>
+      <p class="subscribe-popup__message">Дякую за підписку!</p>
+    </dialog>
   </div>
 </footer>

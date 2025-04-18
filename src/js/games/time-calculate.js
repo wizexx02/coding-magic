@@ -1,3 +1,5 @@
+import searchIcon from '../../images/icons.svg';
+
 export const timeCalculatorInit = () => {
   const gameContainer = document.querySelector('.time-calculator');
 
@@ -7,7 +9,11 @@ export const timeCalculatorInit = () => {
       <div class="time-calculator__wrapper">
         <form class="time-calculator__form" data-time_calculate_form>
             <input class="time-calculator__input" type="number" required name="totalMinutes" placeholder="Введіть число"/>
-            <button class="time-calculator__button" name="timeCalculatorNumberButton">S</button>
+            <button class="time-calculator__button" name="timeCalculatorNumberButton">
+              <svg class="time-calculator__icon">
+                <use href='${searchIcon}#icon-search'></use>
+              </svg>
+            </button>
         </form>
         <div class="time-calculator__result"><p data-time_calculator_output>Результат</p></div>
        </div>
