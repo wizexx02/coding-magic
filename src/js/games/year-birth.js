@@ -1,27 +1,31 @@
-function leapYearGameInit() {
-  const gameContainer = document.querySelector('.leap-year-game');
+export const leapYearGameInit = () => {
+  const gameContainer = document.querySelector('.leap-year');
 
   const gameHtml = `
-      <div class="leap-year__container">
-        <h2 class="leap-year__title">Перевір в який рік ти народився</h2>
-        <form class="leap-year__form" id="leap-year-form">
-          <input type="number" name="year" placeholder="Введіть рік народження" required />
-          <button type="submit"></button>
-        </form>
-        <p id="leap-year-result"></p>
-  
-        <!-- Місце для картинки -->
-        <!-- <img src="image.png" alt="Leap Year" class="leap-year__image" /> -->
-      </div>
-    `;
+    <div class="leap-year__container">
+      <h2 class="leap-year__title">Перевір в який рік ти народився</h2>
+      <form class="leap-year__form" data-leap_year_form>
+        <input 
+          type="number" 
+          name="year" 
+          placeholder="Введіть рік народження" 
+          required 
+          class="leap-year__input"
+        />
+      </form>
+      <p class="leap-year__result" data-leap_year_result></p>
+
+      <!-- Місце для картинки -->
+      <!-- <img src="image.png" alt="Leap Year" class="leap-year__image" /> -->
+    </div>
+  `;
 
   gameContainer.innerHTML = gameHtml;
 
-  const form = document.getElementById('leap-year-form');
-  const result = document.getElementById('leap-year-result');
+  const form = document.querySelector('[data-leap_year_form]');
+  const result = document.querySelector('[data-leap_year_result]');
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
+  const checkLeapYear = () => {
     const year = parseInt(form.year.value);
 
     if (isNaN(year) || year < 0) {
@@ -39,7 +43,7 @@ function leapYearGameInit() {
       result.textContent = 'Ваш рік не високосний.';
       result.style.color = 'black';
     }
-  });
-}
+  };
 
-document.addEventListener('DOMContentLoaded', leapYearGameInit);
+  form.addEventListener('input', checkLeapYear);
+};

@@ -1,6 +1,7 @@
 import { guessNumberInit } from '../games/guess-number';
 import { googleDinoInit } from '../games/google-dino';
 import { timeCalculatorInit } from '../games/time-calculate';
+import { leapYearGameInit } from '../games/year-birth';
 import { calculatorInit } from '../games/calculator';
 import { scientistInit } from '../games/scientist';
 export default [
@@ -9,6 +10,7 @@ export default [
     name: 'Високосний калькулятор',
     category: 'numerical',
     class: 'leap-year',
+    init: leapYearGameInit,
   },
   {
     id: 2,
