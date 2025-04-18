@@ -1,3 +1,5 @@
+import searchIcon from '../../images/icons.svg';
+
 export const guessNumberInit = () => {
   const RIDDLE_NUMBER = Math.floor(Math.random() * 10 + 1);
   const gameContainer = document.querySelector('.guess-number');
@@ -8,10 +10,14 @@ export const guessNumberInit = () => {
     <div class="guess-number__wrapper">
         <form class="guess-number__form" data-guess_number_form>
           <input class="guess-number__input" type="number" max="10" min="0" required name="guessNumber" placeholder="Введіть число"/>
-          <button class="guess-number__button" name="guessNumberButton">S</button>
+          <button class="guess-number__button" name="guessNumberButton">
+            <svg class="guess-number__icon">
+              <use href='${searchIcon}#icon-search'></use>
+            </svg>
+          </button>
         </form>
     </div>
-    <button class="guess-number__restart";">Перезапустити гру</button>
+    <button class="guess-number__restart">Перезапустити гру</button>
     </div>`;
 
   gameContainer.innerHTML = gameHtml;
