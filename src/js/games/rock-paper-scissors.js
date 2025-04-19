@@ -1,16 +1,16 @@
 export const rockPaperScissorsInit = () => {
   const gameContainer = document.querySelector('.rock-paper-scissors');
   const gameHtml = `
-  <div class="rock-paper-scissors__container">
-    <h2 class="rock__title">Камінь - ножиці - папір</h2>
+  <div class="rock__container">
+    <h2 class="game__title">Камінь - ножиці - папір</h2>
     <div class="rock__content-wrapper">
     <div class="rock__wrapper">
-        <button class="rock__wrapper-button" id="rock"><img src="../../images/rock.png" alt="stone"></button>
-        <button class="rock__wrapper-button" id="scissors"><img src="../../images/scissors.png" alt="scissors"></button>
-        <button class="rock__wrapper-button" id="paper"><img src="../../images/paper.png" alt="paper"></button>
+        <button class="rock__button rock__button--rock" id="rock"></button>
+        <button class="rock__button rock__button--scissors" id="scissors"></button>
+        <button class="rock__button rock__button--paper" id="paper"></button>
     </div>
-    <div class="rock__result" id="result"></div>
-    <div class="rock__score" id="score">Рахунок: Гравець - 0 Комп'ютер - 0 Нічиї - 0</div>
+    <p class="rock__result" id="result"></p>
+    <div class="rock__score" id="score"><h3>Рахунок:</h3> <p>Гравець - <span id="player-score">0</span></p> <p>Комп'ютер - <span id="computer-score">0</span></p></div>
     </div>
   </div>
 `;
@@ -38,7 +38,6 @@ export const rockPaperScissorsInit = () => {
 
     if (playerChoice === computerChoice) {
       result = 'Нічия!';
-      drawScore++;
     } else if (
       (playerChoice === 'Камінь' && computerChoice === 'Ножиці') ||
       (playerChoice === 'Ножиці' && computerChoice === 'Папір') ||
@@ -54,8 +53,7 @@ export const rockPaperScissorsInit = () => {
     document.getElementById(
       'result'
     ).innerHTML = `Ви вибрали: ${playerChoice} <br> Комп'ютер вибрав: ${computerChoice} <br> <strong>${result}</strong>`;
-    document.getElementById(
-      'score'
-    ).innerText = `Рахунок: Гравець - ${playerScore} <br> Комп'ютер - ${computerScore} <br> Нічиї - ${drawScore}`;
+    document.getElementById('computer-score').innerText = `${computerScore}`;
+    document.getElementById('player-score').innerText = `${playerScore}`;
   }
 };

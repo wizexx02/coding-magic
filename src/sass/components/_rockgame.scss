@@ -1,10 +1,5 @@
-.rock-paper-scissors__container {
+.rock__container {
   text-align: center;
-}
-.rock__title {
-  font-size: 16px;
-  font-weight: 400;
-  padding-bottom: 36px;
 }
 .rock__wrapper {
   display: flex;
@@ -12,11 +7,13 @@
   justify-content: center;
   padding-bottom: 36px;
 }
-.rock__wrapper-button {
+.rock__button {
   background-color: var(--color-text-prime);
   width: 60px;
   height: 60px;
   border-radius: 30%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .rock__content-wrapper {
   display: flex;
@@ -24,4 +21,13 @@
 .rock__score {
   display: flex;
   flex-direction: column;
+}
+.rock__button--rock {
+  background-image: url(../images/rock.png);
+}
+.rock__button--scissors {
+  background-image: url(../images/scissors.png);
+}
+.rock__button--paper {
+  background-image: url(../images/paper.png);
 }
