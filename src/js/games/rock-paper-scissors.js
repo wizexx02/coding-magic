@@ -4,13 +4,18 @@ export const rockPaperScissorsInit = () => {
   <div class="rock__container">
     <h2 class="game__title">Камінь - ножиці - папір</h2>
     <div class="rock__content-wrapper">
-    <div class="rock__wrapper">
+      <div class="rock__wrapper">
         <button class="rock__button rock__button--rock" id="rock"></button>
         <button class="rock__button rock__button--scissors" id="scissors"></button>
         <button class="rock__button rock__button--paper" id="paper"></button>
-    </div>
-    <p class="rock__result" id="result"></p>
-    <div class="rock__score" id="score"><h3>Рахунок:</h3> <p>Гравець - <span id="player-score">0</span></p> <p>Комп'ютер - <span id="computer-score">0</span></p></div>
+      <div class="rock__score" id="score">
+        <h3 class="rock__counter">Рахунок:</h3>
+        <p>Гравець - <span id="player-score">0</span></p>
+        <p>Комп'ютер - <span id="computer-score">0</span></p>
+      </div>
+        </div>
+      <p class="rock__result" id="result"></p>
+      <button class="rock__button rock__button-start" id="start">Хід комп’ютера</button>
     </div>
   </div>
 `;
@@ -19,41 +24,63 @@ export const rockPaperScissorsInit = () => {
 
   let playerScore = 0;
   let computerScore = 0;
-  let drawScore = 0;
+  let playerChoice = null;
+
+  const choices = ['Камінь', 'Ножиці', 'Папір'];
+  const resultEl = document.getElementById('result');
 
   document
     .getElementById('rock')
-    .addEventListener('click', () => playGame('Камінь'));
-  document.getElementById('scissors').addEventListener('click', () => {
-    playGame('Ножиці');
-    console.log('work');
-  });
+    .addEventListener('click', () => selectChoice('Камінь'));
+  document
+    .getElementById('scissors')
+    .addEventListener('click', () => selectChoice('Ножиці'));
   document
     .getElementById('paper')
-    .addEventListener('click', () => playGame('Папір'));
-  function playGame(playerChoice) {
-    const choices = ['Камінь', 'Ножиці', 'Папір'];
+    .addEventListener('click', () => selectChoice('Папір'));
+
+  document.getElementById('start').addEventListener('click', () => {
+    if (!playerChoice) {
+      alert('Спочатку оберіть ваш варіант!');
+      return;
+    }
+    playGame();
+  });
+
+  function selectChoice(choice) {
+    playerChoice = choice;
+    resultEl.innerHTML = '';
+  }
+
+  function playGame() {
     const computerChoice = choices[Math.floor(Math.random() * 3)];
-    let result = '';
 
     if (playerChoice === computerChoice) {
-      result = 'Нічия!';
-    } else if (
+      playerChoice = null;
+      return;
+    }
+
+    let result = '';
+
+    if (
       (playerChoice === 'Камінь' && computerChoice === 'Ножиці') ||
       (playerChoice === 'Ножиці' && computerChoice === 'Папір') ||
       (playerChoice === 'Папір' && computerChoice === 'Камінь')
     ) {
-      result = 'Ви перемогли!';
+      resultEl.classList.remove('result__lose');
+      result = 'Ви виграли раунд!';
       playerScore++;
+      resultEl.classList.add('result__win');
     } else {
-      result = "Комп'ютер переміг!";
+      resultEl.classList.remove('result__win');
+      result = 'Комп’ютер виграв раунд!';
       computerScore++;
+      resultEl.classList.add('result__lose');
     }
 
-    document.getElementById(
-      'result'
-    ).innerHTML = `Ви вибрали: ${playerChoice} <br> Комп'ютер вибрав: ${computerChoice} <br> <strong>${result}</strong>`;
+    resultEl.innerHTML = `<strong>${result}</strong>`;
     document.getElementById('computer-score').innerText = `${computerScore}`;
     document.getElementById('player-score').innerText = `${playerScore}`;
+    playerChoice = null;
   }
 };
