@@ -1,3 +1,4 @@
+import { rockPaperScissorsInit } from '../games/rock-paper-scissors';
 import { guessNumberInit } from '../games/guess-number';
 import { googleDinoInit } from '../games/google-dino';
 import { timeCalculatorInit } from '../games/time-calculate';
@@ -22,6 +23,7 @@ export default [
     name: 'Камінь-Ножиці-Папір',
     category: 'game',
     class: 'rock-paper-scissors',
+    init: rockPaperScissorsInit,
   },
   {
     id: 4,
