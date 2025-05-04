@@ -1,35 +1,60 @@
 <header class="header">
-  <div class="header__text">
-    <a class="header__link" href="#">
-      <img class="header__img" src="./images/header-logo.svg" alt="header-logo"
-    /></a>
-    <ul class="header__list">
-      <li class="header__list-item">
-        Інтерактив
-        <button class="header__list-button">
-          <img
-            class="header__list-img"
-            src="./images/arrow-down.svg"
-            alt="arrow"
-          />
-        </button>
-      </li>
-      <li class="header__list-item">Наша команда</li>
-      <li class="header__list-item">Контакти</li>
-    </ul>
-  </div>
-  <div class="header__lowertext">
-    <button class="header__shift-button">
-      <div class="header__shift-wrapper">
+  <div class="container header__container">
+    <div class="header__text">
+      <a class="header__link" href="#">
         <img
-          class="header__shift-img"
-          src="./images/header-sun.svg"
-          alt="button-setting"
-        />
-      </div>
-    </button>
-    <p class="header__user">
-      Вітаємо, <span class="header__text-user"></span>!
-    </p>
+          class="header__img"
+          src="./images/header-logo.svg"
+          alt="header-logo"
+      /></a>
+      <ul class="header__list">
+        <li class="header__list-item">
+          <div class="header__list-wrapper">
+            <a class="header__list-link" href="#">Інтерактив</a>
+            <button class="header__list-button"></button>
+          </div>
+          <ul class="header__filter" data-filter>
+            <li class="header__filter-item">
+              <button class="header__filter-button" data-category="numerical">
+                Числовий
+              </button>
+            </li>
+            <li class="header__filter-item">
+              <button class="header__filter-button" data-category="game">
+                Ігровий
+              </button>
+            </li>
+            <li class="header__filter-item">
+              <button
+                class="header__filter-button"
+                data-category="acquaintance"
+              >
+                Ознайомчий
+              </button>
+            </li>
+          </ul>
+        </li>
+        <li class="header__list-item">
+          <a class="header__list-link" href="#">Наша команда</a>
+        </li>
+        <li class="header__list-item">
+          <a class="header__list-link" href="#">Контакти</a>
+        </li>
+      </ul>
+    </div>
+    <div class="header__lowertext">
+      <button class="header__shift-button">
+        <div class="header__shift-wrapper">
+          <img
+            class="header__shift-img"
+            src="./images/header-sun.svg"
+            alt="button-setting"
+          />
+        </div>
+      </button>
+      <p class="header__user">
+        Вітаємо, <span class="header__text-user"></span>!
+      </p>
+    </div>
   </div>
 </header>

@@ -1,0 +1,99 @@
+.google-dinosaur__container {
+  max-width: 720px;
+  margin-inline: auto;
+}
+.google-dinosaur__area {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-image: url(../images/google-dino/game-background.png);
+  aspect-ratio: 4/1;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.dino {
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+  width: 60px;
+  background-image: url(../images/google-dino/dino.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 60px;
+}
+
+.cactus {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../images/google-dino/cactus.webp);
+  width: 30px;
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  animation: moveObstacle 2s linear infinite;
+}
+
+.dinosaur {
+  &__modal {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-shadow);
+    gap: 15px;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+  }
+
+  &__message {
+    font-size: 18px;
+  }
+  &__start {
+    border: 1px solid var(--color-text-input);
+    padding: 15px 20px;
+    border-radius: 10px;
+    transition: transform 250ms ease-in-out;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.dinosaur__modal.show {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
+}
+@keyframes moveObstacle {
+  from {
+    right: -20px;
+  }
+
+  to {
+    right: 100%;
+  }
+}
+
+.jump {
+  animation: jump 0.5s ease-out;
+}
+
+@keyframes jump {
+  0% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -100px;
+  }
+
+  100% {
+    translate: 0 0;
+  }
+}

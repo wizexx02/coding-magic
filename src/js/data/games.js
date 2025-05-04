@@ -1,6 +1,9 @@
 import { rockPaperScissorsInit } from '../games/rock-paper-scissors';
 import { guessNumberInit } from '../games/guess-number';
+import { googleDinoInit } from '../games/google-dino';
+import { timeCalculatorInit } from '../games/time-calculate';
 import { calculatorInit } from '../games/calculator';
+import { scientistInit } from '../games/scientist';
 export default [
   {
     id: 1,
@@ -34,12 +37,14 @@ export default [
     name: 'Калькулятор часу',
     category: 'numerical',
     class: 'time-calculator',
+    init: timeCalculatorInit,
   },
   {
     id: 6,
     name: 'Google динозаврик',
     category: 'game',
     class: 'google-dinosaur',
+    init: googleDinoInit,
   },
   {
     id: 7,
@@ -64,5 +69,6 @@ export default [
     name: 'Вчений',
     category: 'acquaintance',
     class: 'scientist',
+    init: scientistInit,
   },
 ];

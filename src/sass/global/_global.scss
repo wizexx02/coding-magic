@@ -5,6 +5,11 @@ body {
   line-height: 1.7;
   color: var(--color-text-prime);
 }
+body.modal-open {
+  padding-right: 16px;
+  position: fixed;
+  width: 100%;
+}
 img {
   display: block;
   width: 100%;
