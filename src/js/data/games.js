@@ -3,7 +3,9 @@ import { guessNumberInit } from '../games/guess-number';
 import { googleDinoInit } from '../games/google-dino';
 import { timeCalculatorInit } from '../games/time-calculate';
 import { calculatorInit } from '../games/calculator';
+import { maxNumberGameInit } from '../games/treenumbers';
 import { scientistInit } from '../games/scientist';
+
 export default [
   {
     id: 1,
@@ -57,6 +59,7 @@ export default [
     name: 'Найбільше число',
     category: 'numerical',
     class: 'biggest-number',
+    init: maxNumberGameInit,
   },
   {
     id: 9,
