@@ -45,7 +45,7 @@ const filterHandler = event => {
         renderGames(games, 'numerical');
 
         break;
-      case 'games':
+      case 'game':
         renderGames(games, 'game');
 
         break;

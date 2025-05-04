@@ -12,6 +12,7 @@ class GoogleDinosaur {
   init() {
     document.addEventListener('keydown', event => {
       if (event.code === 'Space' && !this.isJumping && !this.gameOver) {
+        event.preventDefault();
         this.jump();
       }
     });
@@ -72,7 +73,7 @@ class GoogleDinosaur {
   }
 
   randomHeight() {
-    return `${Math.random() * (70 - 40) + 40}px`;
+    return `${Math.random() * (70 - 40) + 30}px`;
   }
 
   endGame(obstacle) {

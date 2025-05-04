@@ -31,6 +31,11 @@
   border-radius: 0 20px 20px 0;
   box-shadow: 3px 3px 0 0 var(--color-shadow);
 }
+.time-calculator__icon {
+  width: 15px;
+  height: 15px;
+  stroke: var(--color-bg);
+}
 @media (min-width: 768px) {
   .time-calculator__wrapper {
     flex-direction: row;
