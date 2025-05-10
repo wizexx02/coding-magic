@@ -8,6 +8,9 @@
   align-items: center;
   gap: 50px;
 }
+html[data-theme='dark'] .logo__img {
+  filter: invert(1);
+}
 
 @media (min-width: 768px) {
   .footer__container {
