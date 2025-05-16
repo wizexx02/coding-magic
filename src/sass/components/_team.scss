@@ -1,0 +1,66 @@
+.our-team__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+}
+.teammate__photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.teammate__img {
+  object-fit: cover;
+}
+.slider__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.left__button {
+  left: -93px;
+}
+.right__button {
+  right: -93px;
+}
+.slider__list {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+.slider__item {
+  min-width: 100%;
+}
+.teammate {
+  display: flex;
+  align-items: center;
+
+  flex-direction: column;
+  gap: 20px;
+}
+.slider__pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination__dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination__dot.active {
+  background-color: #333;
+}

@@ -1,23 +1,23 @@
-function maxNumberGameInit() {
-  const gameContainer = document.querySelector('.max-number-game');
+export const maxNumberGameInit = () => {
+  const gameContainer = document.querySelector('.biggest-number');
 
   const gameHtml = `
-      <div class="max-number-game__container">
-        <h2 class="max-number-game__title">Введіть 3 числа</h2>
-        <div class="max-number-game__wrapper">
-          <form class="max-number-game__form" id="max-number-form">
-            <input type="number" name="num1" placeholder="Введіть число" required />
-            <input type="number" name="num2" placeholder="Введіть число" required />
-            <input type="number" name="num3" placeholder="Введіть число" required />
-            <button type="submit">OK</button>
-          </form>
-          <p id="max-number-result">Найбільше число, яке ви ввели - (число)</p>
-  
-          <!-- Місце для картинки -->
-          <!-- <img src="image.png" alt="some image" class="max-number-game__image" /> -->
+        <div class="max-number-game__container">
+          <h2 class="max-number-game__title">Введіть 3 числа</h2>
+          <div class="max-number-game__wrapper">
+            <form class="max-number-game__form" id="max-number-form">
+              <input type="number" name="num1" placeholder="Введіть число" required />
+              <input type="number" name="num2" placeholder="Введіть число" required />
+              <input type="number" name="num3" placeholder="Введіть число" required />
+              <button type="submit">OK</button>
+            </form>
+            <p id="max-number-result">Найбільше число, яке ви ввели - (число)</p>
+    
+            <!-- Місце для картинки -->
+            <!-- <img src="image.png" alt="some image" class="max-number-game__image" /> -->
+          </div>
         </div>
-      </div>
-    `;
+      `;
 
   gameContainer.innerHTML = gameHtml;
 
@@ -39,6 +39,4 @@ function maxNumberGameInit() {
     const max = Math.max(num1, num2, num3);
     result.textContent = `Найбільше число, яке ви ввели - ${max}`;
   });
-}
-
-document.addEventListener('DOMContentLoaded', maxNumberGameInit);
+};

@@ -3,6 +3,8 @@ import { googleDinoInit } from '../games/google-dino';
 import { timeCalculatorInit } from '../games/time-calculate';
 import { calculatorInit } from '../games/calculator';
 import { scientistInit } from '../games/scientist';
+import { maxNumberGameInit } from '../games/maxnumbe';
+import { teamInit } from '../games/team';
 export default [
   {
     id: 1,
@@ -55,12 +57,14 @@ export default [
     name: 'Найбільше число',
     category: 'numerical',
     class: 'biggest-number',
+    init: maxNumberGameInit,
   },
   {
     id: 9,
     name: 'Наша команда',
     category: 'acquaintance',
     class: 'our-team',
+    init: teamInit,
   },
   {
     id: 10,
