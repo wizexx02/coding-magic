@@ -15,7 +15,11 @@
   overflow: hidden;
 }
 .teammate__img {
-  object-fit: cover;
+  object-fit: contain;
+  height: 100%;
+}
+.slider {
+  overflow: hidden;
 }
 .slider__button {
   position: absolute;
@@ -31,7 +35,7 @@
 .slider__list {
   display: flex;
   width: 100%;
-  overflow: hidden;
+  transition: transform 0.4s ease;
 }
 .slider__item {
   min-width: 100%;
@@ -53,14 +57,17 @@
 }
 
 .pagination__dot {
-  width: 12px;
-  height: 12px;
-  background-color: #ccc;
+  width: 18px;
+  height: 3px;
+  background-color: var(--color-bg-cards-unactive);
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s;
+  transition: 0.5s;
+  border-radius: 3px;
 }
 
 .pagination__dot.active {
-  background-color: #333;
+  background-color: var(--color-bg-pagiantion-active);
+  width: 30px;
 }

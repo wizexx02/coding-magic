@@ -6,7 +6,7 @@ export const teamInit = () => {
   const gameHtml = `
     <div class="our-team__container">
       <h2 class="game__title">Наша команда</h2>
-      <button class="slider__button left__button">←</button>
+      <button class="slider__button left__button"> <img class="team__arrow-left" src="../../images/left-stripe.jpg" alt="arrow"></button>
       <div class="slider">
         <ul class="slider__list">
           ${team
@@ -35,7 +35,7 @@ export const teamInit = () => {
           )
           .join('')}
       </ul>
-      <button class="slider__button right__button">→</button>
+      <button class="slider__button right__button"> <img class="team__arrow-rigth" src="./images/rigth-stripe.jpg" alt="arrow"></button>
     </div>
   `;
 
@@ -57,17 +57,22 @@ export const teamInit = () => {
     paginationDots[currentSlide].classList.add('active');
   };
 
-  const goToSlide = index => {
-    currentSlide = (index + totalSlides) % totalSlides;
-  };
+  rightButton.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % totalSlides;
 
-  rightButton.addEventListener('click', () => goToSlide(currentSlide + 1));
-  leftButton.addEventListener('click', () => goToSlide(currentSlide - 1));
+    updateSlider();
+  });
+  leftButton.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+
+    updateSlider();
+  });
 
   paginationDots.forEach(dot => {
     dot.addEventListener('click', () => {
-      const index = parseInt(dot.dataset.index, 10);
-      goToSlide(index);
+      currentSlide = parseInt(dot.dataset.index, 10);
+
+      updateSlider();
     });
   });
 };
