@@ -25,12 +25,18 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  width: 50px;
+  height: 100px;
+  background-color: transparent;
+  background-size: cover;
 }
 .left__button {
   left: -93px;
+  background-image: url(../images/left-stripe.jpg);
 }
 .right__button {
   right: -93px;
+  background-image: url(../images/rigth-stripe.jpg);
 }
 .slider__list {
   display: flex;
