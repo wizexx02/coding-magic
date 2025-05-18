@@ -5,6 +5,8 @@ import { timeCalculatorInit } from '../games/time-calculate';
 import { calculatorInit } from '../games/calculator';
 import { maxNumberGameInit } from '../games/treenumbers';
 import { scientistInit } from '../games/scientist';
+import { maxNumberGameInit } from '../games/maxnumbe';
+import { teamInit } from '../games/team';
 
 export default [
   {
@@ -66,6 +68,7 @@ export default [
     name: 'Наша команда',
     category: 'acquaintance',
     class: 'our-team',
+    init: teamInit,
   },
   {
     id: 10,
