@@ -36,6 +36,9 @@
   height: 15px;
   stroke: var(--color-bg);
 }
+html[data-theme='dark'] .time-calculator__icon {
+  filter: invert(0.3);
+}
 @media (min-width: 768px) {
   .time-calculator__wrapper {
     flex-direction: row;

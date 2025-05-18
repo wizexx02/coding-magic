@@ -1,10 +1,13 @@
+import { rockPaperScissorsInit } from '../games/rock-paper-scissors';
 import { guessNumberInit } from '../games/guess-number';
 import { googleDinoInit } from '../games/google-dino';
 import { timeCalculatorInit } from '../games/time-calculate';
 import { calculatorInit } from '../games/calculator';
+import { maxNumberGameInit } from '../games/treenumbers';
 import { scientistInit } from '../games/scientist';
 import { maxNumberGameInit } from '../games/maxnumbe';
 import { teamInit } from '../games/team';
+
 export default [
   {
     id: 1,
@@ -24,6 +27,7 @@ export default [
     name: 'Камінь-Ножиці-Папір',
     category: 'game',
     class: 'rock-paper-scissors',
+    init: rockPaperScissorsInit,
   },
   {
     id: 4,

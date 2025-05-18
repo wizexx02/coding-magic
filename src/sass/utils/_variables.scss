@@ -2,7 +2,7 @@
   --color-bg: rgba(255, 255, 255, 1);
   --color-text-prime: rgba(0, 0, 0, 1);
   --color-text-input: #7e7e7e;
-  --color-bg-input: rgb(215, 215, 215);
+  --color-bg-input: rgb(158, 158, 158);
   --color-alert-success: rgba(3, 153, 0, 1);
   --color-alert-error: #990000;
   --color-bg-football: #5abb58;
@@ -12,5 +12,19 @@
   --color-shadow: rgba(0, 0, 0, 0.25);
   --color-filter-hover: #f1f1f1;
 }
-
+html[data-theme='dark'] {
+  color-scheme: 'dark';
+  --color-bg: #212121;
+  --color-text-prime: #f2eddc;
+  --color-text-input: #f2eddc;
+  --color-bg-input: #595959;
+  --color-alert-success: rgba(3, 153, 0, 1);
+  --color-alert-error: #990000;
+  --color-bg-football: #5abb58;
+  --color-bg-pagiantion-active: #797979;
+  --color-bg-cards-unactive: #d9d9d9;
+  --color-bg-checker: #7a7a7a;
+  --color-shadow: rgba(0, 0, 0, 0.25);
+  --color-filter-hover: #f1f1f1;
+}
 $font-family-primary: 'Montserrat Alternates', sans-serif;
