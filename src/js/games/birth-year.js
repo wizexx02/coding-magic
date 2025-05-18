@@ -3,7 +3,7 @@ export function leapYearGameInit() {
 
   const gameHtml = `
       <div class="leap-year__container">
-        <h3 class="leap-year__title">Перевір в який рік ти народився</h3>
+        <h2 class="leap-year__title">Перевір в який рік ти народився</h2>
         <div class="leap-year__wrapper">
           <form class="leap-year__form" data-leap_year_form>
             <input
@@ -16,7 +16,6 @@ export function leapYearGameInit() {
             <button class="leap-year__button" name="leapYearCheckButton">
               OK
             </button>
-          </form>
           <p id="leap-year-result" style="display: none;"></p>
         </div>
       </div>
