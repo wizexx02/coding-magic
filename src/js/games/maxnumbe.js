@@ -1,44 +1,40 @@
-function maxNumberGameInit() {
-  const gameContainer = document.querySelector('.max-number-game');
+export const maxNumberGameInit = () => {
+  const gameContainer = document.querySelector('.biggest-number');
 
   const gameHtml = `
       <div class="max-number-game__container">
-        <h2 class="max-number-game__title">Введіть 3 числа</h2>
+        <h2 class="game__title">Введіть 3 числа</h2>
         <div class="max-number-game__wrapper">
-          <form class="max-number-game__form" id="max-number-form">
-            <input type="number" name="num1" placeholder="Введіть число" required />
-            <input type="number" name="num2" placeholder="Введіть число" required />
-            <input type="number" name="num3" placeholder="Введіть число" required />
-            <button type="submit">OK</button>
+          <form class="max-number-game__form" data-max_number_form>
+            <input class="max-number-game__input" type="number" required name="number1" placeholder="Введіть число"/>
+            <input class="max-number-game__input" type="number" required name="number2" placeholder="Введіть число"/>
+            <input class="max-number-game__input" type="number" required name="number3" placeholder="Введіть число"/>
+          
           </form>
-          <p id="max-number-result">Найбільше число, яке ви ввели - (число)</p>
-  
-          <!-- Місце для картинки -->
-          <!-- <img src="image.png" alt="some image" class="max-number-game__image" /> -->
+          <div class="max-number-game__result">
+            <p data-max_number_output>Найбільше число, яке ви ввели - (число)</p>
+          </div>
         </div>
       </div>
     `;
 
   gameContainer.innerHTML = gameHtml;
+  const form = document.querySelector('[data-max_number_form]');
+  const outputElement = document.querySelector('[data-max_number_output]');
 
-  const form = document.getElementById('max-number-form');
-  const result = document.getElementById('max-number-result');
+  const handleInput = () => {
+    const num1 = parseFloat(form.number1.value);
+    const num2 = parseFloat(form.number2.value);
+    const num3 = parseFloat(form.number3.value);
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const num1 = parseFloat(form.num1.value);
-    const num2 = parseFloat(form.num2.value);
-    const num3 = parseFloat(form.num3.value);
-
-    if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
-      result.textContent = 'Будь ласка, введіть всі три числа правильно.';
+    if ([num1, num2, num3].some(num => isNaN(num))) {
+      outputElement.textContent = 'Будь ласка, введіть усі три числа.';
       return;
     }
 
     const max = Math.max(num1, num2, num3);
-    result.textContent = `Найбільше число, яке ви ввели - ${max}`;
-  });
-}
+    outputElement.textContent = `Найбільше число, яке ви ввели - ${max}`;
+  };
 
-document.addEventListener('DOMContentLoaded', maxNumberGameInit);
+  form.addEventListener('input', handleInput);
+};
