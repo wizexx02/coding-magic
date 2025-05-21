@@ -1,3 +1,4 @@
+import searchIcon from '../../images/icons.svg';
 export function leapYearGameInit() {
   const gameContainer = document.querySelector('.leap-year');
 
@@ -14,7 +15,9 @@ export function leapYearGameInit() {
               required
             />
             <button class="leap-year__button" name="leapYearCheckButton">
-              OK
+             <svg class="leap-year__icon">
+                          <use href='${searchIcon}#icon-search'></use>
+                        </svg>
             </button>
           <p id="leap-year-result" style="display: none;"></p>
         </div>
@@ -34,7 +37,7 @@ export function leapYearGameInit() {
 
     if (isNaN(year) || year < 1) {
       result.textContent = 'Будь ласка, введіть коректний рік.';
-      result.style.color = 'red';
+      result.style.color = 'var(--color-alert-error)';
       result.style.display = 'block';
       return;
     }
@@ -44,7 +47,9 @@ export function leapYearGameInit() {
     result.textContent = isLeap
       ? 'Ви народилися у високосний рік!'
       : 'Ваш рік не високосний.';
-    result.style.color = isLeap ? 'green' : 'black';
+    result.style.color = isLeap
+      ? 'var(--color-alert-success)'
+      : 'var(--color-alert-error)';
     result.style.display = 'block';
   });
 }
