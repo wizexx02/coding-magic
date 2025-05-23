@@ -1,0 +1,13 @@
+.section {
+  position: relative;
+}
+.section::before {
+  content: '';
+  width: 37%;
+  height: 1px;
+  background-color: var(--color-text-prime);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
