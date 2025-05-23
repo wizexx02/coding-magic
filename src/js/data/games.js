@@ -4,8 +4,10 @@ import { googleDinoInit } from '../games/google-dino';
 import { timeCalculatorInit } from '../games/time-calculate';
 import { calculatorInit } from '../games/calculator';
 import { scientistInit } from '../games/scientist';
+import { leapYearGameInit } from '../games/birth-year';
 import { maxNumberGameInit } from '../games/maxnumbe';
 import { teamInit } from '../games/team';
+
 
 export default [
   {
@@ -13,6 +15,7 @@ export default [
     name: 'Високосний калькулятор',
     category: 'numerical',
     class: 'leap-year',
+    init: leapYearGameInit,
   },
   {
     id: 2,

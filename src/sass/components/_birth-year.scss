@@ -1,0 +1,55 @@
+.leap-year__container {
+  max-width: 575px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+.leap-year__title {
+  font-weight: 400;
+}
+.leap-year__title {
+  margin-bottom: 36px;
+}
+.leap-year__form {
+  display: flex;
+}
+.leap-year__input {
+  min-width: 115px;
+  background-color: var(--color-bg-input);
+  border-radius: 20px 0 0 20px;
+  padding: 10px;
+  color: var(--color-text-input);
+  font-size: 12px;
+  box-shadow: 3px 3px 0 0 var(--color-shadow);
+}
+.leap-year__button {
+  background-color: var(--color-text-prime);
+  color: var(--color-bg);
+  padding: 10px;
+  border-radius: 0 20px 20px 0;
+  box-shadow: 3px 3px 0 0 var(--color-shadow);
+  margin-right: 149px;
+}
+.leap-year__icon {
+  width: 15px;
+  height: 15px;
+  stroke: var(--color-bg);
+}
+html[data-theme='dark'] .leap-year__icon {
+  filter: invert(0.3);
+}
+.leap-year__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+#leap-year-result {
+  position: absolute;
+  right: 433px;
+  top: 190px;
+  animation: showMessage 0.75s ease;
+}
