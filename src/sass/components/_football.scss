@@ -1,0 +1,28 @@
+.football-game__container {
+  text-align: center;
+}
+
+.football-game__title {
+  padding-bottom: 36px;
+  font-size: 24px;
+}
+
+.football-game__field {
+  width: 600px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: var(--color-bg-football);
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+.football-game__ball {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 130px;
+  left: 280px;
+  transition: top 0.05s linear, left 0.05s linear;
+}

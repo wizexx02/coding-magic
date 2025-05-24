@@ -1,6 +1,7 @@
 import { rockPaperScissorsInit } from '../games/rock-paper-scissors';
 import { guessNumberInit } from '../games/guess-number';
 import { googleDinoInit } from '../games/google-dino';
+import { soccerGameInit } from '../games/football';
 import { timeCalculatorInit } from '../games/time-calculate';
 import { calculatorInit } from '../games/calculator';
 import { maxNumberGameInit } from '../games/treenumbers';
@@ -53,6 +54,7 @@ export default [
     name: 'Футбол',
     category: 'game',
     class: 'soccer',
+    init: soccerGameInit,
   },
   {
     id: 8,
