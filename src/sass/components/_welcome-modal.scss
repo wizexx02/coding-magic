@@ -2,6 +2,7 @@
   position: fixed;
   inset: 0;
   z-index: 10;
+  background-color: var(--color-shadow);
 }
 .welcome-modal {
   padding-top: 46px;
@@ -94,13 +95,6 @@
   &:hover {
     scale: 1.05;
   }
-}
-body.modal-open .header__text,
-body.modal-open .header__lowertext {
-  filter: blur(5px);
-  pointer-events: none;
-  user-select: none;
-  transition: filter 0.3s ease;
 }
 
 body.modal-open {
